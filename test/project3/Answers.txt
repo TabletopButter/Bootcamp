@@ -1,0 +1,12 @@
+1. Clear Commmand
+2. Control+Shift+5
+3. The Up Arrow
+4. mv filename EmtpyFolder
+5. ls -l
+6. rmdir EmptyFolder
+7. ls -a,  ls | grep .css
+8. find .-name <filename>
+9i. ls | grep text filename
+ii. grep -iRl "phrase" ./
+10i.  chmod 645 filename
+10ii. chmod 400 filename

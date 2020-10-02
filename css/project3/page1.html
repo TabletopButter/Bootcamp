@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+    div a{
+        text-decoration: none;
+        color:white;
+        display:inline-block;
+        height:70px;
+        width: 287px;
+        font-family: "Oswald", sans-serif;
+        text-align: center; 
+        font-size: 25px;
+        vertical-align: middle;
+        line-height:64px;
+        border-right:1px solid white;
+        background:#01579B;
+        }
+
+    div a:hover{
+        background:#9AD1E3;
+    }
+    ul{
+        display:inline;
+        margin:0;
+        padding:0;
+        width: 287px;
+    }
+    li {display:inline-block;}
+    li:hover ul{display:block;}
+    li ul{
+        position:absolute;
+        display:none;
+    }
+    ul li ul li a {display:block !important;color:black; background:white;}
+    ul li ul li a:hover{background: #ACE39A;}
+        
+    body{background-color:#ECEFF1;}
+        
+    </style>
+</head>
+<body>
+<ul>
+    <div>
+        <a href="#">Home</a>           
+        <ul>
+            <li>
+                <a href="#">About</a>
+                    <ul>
+                        <li><a href="#">Bio</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                    </ul>
+            </li>  
+        </ul>
+
+         <!--Splitting up the Tabs to give it a bit of organization-->      
+
+        <ul>
+            <li>
+                <a href="#">Location</a>
+                    <ul>
+                        <li><a href="#">Austin</a></li>
+                        <li><a href="#">Houston</a></li>
+                        <li><a href="#">Dallas</a></li>
+                        <li><a href="#">San Antonio</a></li>
+                    </ul>
+            </li>
+        </ul>
+        
+        <!--Splitting up the Tabs to give it a bit of organization--> 
+
+        <ul>
+            <li>
+                <a href="#">FAQ</a>
+                    <ul>
+                        <li><a href="#">Why Us?</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+            </li>  
+        </ul>
+        
+        <!--Splitting up the Tabs to give it a bit of organization--> 
+        <ul>
+            <li>
+                <a href="#">Contact</a>
+                    <ul>
+                        <li><a href="#">Phone</a></li>
+                        <li><a href="#">Email Us</a></li>
+                    </ul>
+            </li>  
+        </ul>
+
+    </div>
+    </ul>
+
+</body>
+</html>
