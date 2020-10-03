@@ -1,20 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
-body{background-color:#eaf0f2}
-
-.navbarcontainer{
-    background-color:#263238;
-    list-style-type:none;
-    height:75px;
+body{
+    background-color:#eaf0f2;
+    font-family: "Oswald", sans-serif;
 }
 
-#navbarmain{position: absolute;
+head{
+    background-color: #263238;
+    margin:0;
+    padding:0;
+}
+
+#navbarcontainer{
+    background-color:#263238;
+    position: absolute;
+    height:75px;
+    left:0%;
+    right:0%;
+    top:0%;
+}
+
+#navbarmain{
+    position: absolute;
     left:25%;
+
 }
 #navbarleft{
     position:absolute;
     float:left;
     left:1%;
+    color:white;
 }
 
 a{
@@ -71,9 +86,41 @@ ul{
     transition-delay: 6s;
 }    
 
+.logo {
+    font-family: "Oswald", sans-serif;
+    text-decoration:none;
+    font-size: 42px;
+    line-height: 70px; 
+    padding: 15px 20px;
+    
+}
+
 footer{
+    position:absolute;
+    bottom:0%;
+    left:0%;
     background-color:#263238;
-    font-size:18px;
     padding: 50px 50px 50px 50px;
     margin-top: 75px;
+    margin-left:0px;
+    text-align:center;
+    width:100%;
+}
+
+#fnews{
+    font-size:28px;
+    color:#B0BEC5;
+}
+#fnewsl{
+    font-size:18px;
+    color:white;
+    padding:5px;
+}
+#fnewsl:hover{
+    color:#CFD8DC;
+}
+
+#fnewsc{
+    color:#B0BEC5;
+    font-size:16px;
 }
