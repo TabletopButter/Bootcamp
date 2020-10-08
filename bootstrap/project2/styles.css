@@ -1,0 +1,85 @@
+html, body{
+    height:100%
+}
+
+.navicon{
+    font-size:24px;
+    padding-right: 10px;
+}
+
+#background1{
+    background: url('assets/backgrounds/background1.jpg') no-repeat center center;
+    color:white;
+    height:100%;
+    width:100%;
+    display:flex;
+    align-items:center;
+    background-size:cover;
+}
+
+#background2{
+    background: url('assets/backgrounds/background2.jpg') no-repeat center center;
+    color:white;
+    height:100%;
+    width:100%;
+    display:flex;
+    align-items:center;
+    background-size:cover;
+}
+
+
+#message1{
+    width:900px;
+    margin:0 auto;
+    text-align:center;
+}
+
+#message1 h1{
+    font-size:54px;
+    font-weight:bold;
+}
+
+#button1{
+    border: 1px solid grey;
+    color:black;
+    background:white;
+}
+
+#the-footer{
+    background: #12181b;
+    color:white;
+    padding: 50px 0;
+    font-size:13px;
+}
+
+#the-footer h6{
+    color: #1E88E5;
+}
+
+#the-footer a{
+    color: #CFD8DC;
+}
+
+.footericon{
+    position:absolute;
+    font-size: 40px;
+    color:grey;
+    top:0%;
+}
+
+
+/* About Page*/
+
+.section {
+    padding: 62px 0px;
+    overflow: hidden;
+}
+
+.middle{
+    background: #12181b;
+    color: white;
+}
+
+.middle h2{
+    color: #CFD8DC;
+}
