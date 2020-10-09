@@ -27,6 +27,17 @@ html, body{
     background-size:cover;
 }
 
+#background3{
+    background: url('assets/backgrounds/background3.jpg') no-repeat center center;
+    color:white;
+    height:100%;
+    width:100%;
+    display:flex;
+    align-items:center;
+    background-size:cover;
+}
+
+
 
 #message1{
     width:900px;
