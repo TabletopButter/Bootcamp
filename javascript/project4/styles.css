@@ -1,0 +1,19 @@
+html, body{
+    height:100%
+}
+
+#background{
+    background: no-repeat center center;
+    color:white;
+    height:100%;
+    width:100%;
+    display:flex;
+    align-items:center;
+    background-size:cover;
+}
+
+#message{
+    width:900px;
+    margin:0 auto;
+    text-align:center;
+}
