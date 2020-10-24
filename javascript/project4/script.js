@@ -2,7 +2,7 @@ var ImageArray = ["assets/background1.jpg","assets/background2.jpg","assets/back
 var index=0;
 
 function rotateImage(){
-    document.querySelector(".background").setAttribute("url", ImageArray[index])
+    document.querySelector("body").style.backgroundImage = "url('"+ImageArray[index]+"')";
     index++;
     if(index >= ImageArray.length) {
         index=0;
