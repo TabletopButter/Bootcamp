@@ -3,6 +3,7 @@ var index=0;
 
 function rotateImage(){
     document.querySelector("body").style.backgroundImage = "url('"+ImageArray[index]+"')";
+    document.querySelector("body").style.background('no-repeat center center');
     index++;
     if(index >= ImageArray.length) {
         index=0;
