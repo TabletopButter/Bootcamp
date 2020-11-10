@@ -1,0 +1,35 @@
+body, html{
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+#wel-text h1 {
+    font-size:40px;
+}
+
+.wel {
+    width:90%;
+    margin:0 auto;
+}
+
+#form-container{
+    width:80%;
+    margin:0 auto;
+}
+
+#wel-text{
+    padding: 80px 0 20px 80px;
+}
+
+input[value] {
+    color:grey;
+}
+.red {
+    color:red;
+    font-size: 25px;
+}
+
+.alert {
+    display:none;
+}
