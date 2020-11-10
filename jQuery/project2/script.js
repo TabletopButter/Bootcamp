@@ -11,16 +11,16 @@ $(document).ready(function(){
             let emailPat=new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
 
 
-            if(!emailPat.text($("email").val())){
+            if(!emailPat.test($("#email").val())){
                 $("#validEmailDisplay").text("Please enter a valid email.").addClass('red');
                 return email=false;
             }
             else{
                 $("#validEmailDisplay").text('');
                 return email=true;
-            }
-        })
-    })
+            };
+        });
+    });
 
     $("#password").focus(function(){
 
@@ -37,10 +37,10 @@ $(document).ready(function(){
             else{
                 $("#validPasswordDisplay").text("");
                 return pword=true;
-            }
-        })
+            };
+        });
 
-    })
+    });
 
     $("#form-submit").submit(function(sub){
         if(email && pword){
@@ -50,6 +50,6 @@ $(document).ready(function(){
             $("#validEmailDisplay").text("Please enter a valid email.").addClass('red');
             $("#validPasswordDisplay").text("Your password should be six chracters or more").addClass('red');
             sub.preventDefault();
-        }
-    })
-})
+        };
+    });
+});
