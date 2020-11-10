@@ -1,0 +1,54 @@
+html,
+body{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+body {
+    font-family:"Anton", sans-serif;
+    background: #ffffff;
+}
+
+hr {
+    width:33%;
+    height: 2px;
+    border-top:1px solid black;
+}
+
+.list-inline-item {
+    margin: 0 100px;
+}
+
+#particles {
+    width:90%;
+    height:500px;
+    margin: 10px auto;
+    padding:0;
+    background: black;
+    color:white;
+}
+
+#particles h1{
+    padding-top:200px;
+}
+
+.background {
+    position:relative;
+    top: -333px;
+    max-height: 500px;
+}
+
+.para-spacing {
+    padding: 100px 0;
+}
+
+.parallax-window {
+    min-height: 500px;
+    background: transparent;
+}
+
+.fa-dollar-sign{
+    position:relative;
+    right:15%;
+}
