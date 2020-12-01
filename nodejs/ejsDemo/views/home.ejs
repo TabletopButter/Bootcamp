@@ -1,0 +1,33 @@
+
+   <%- include('partials/header.ejs', {title: 'Home Page'}) %>
+   <%- include('partials/navbar.ejs') %>
+
+   <h1>I am the Home Page</h1>
+    <div class="btn btn-success"></div>
+    <ul>
+        <% data.forEach(function(el){ %>
+            <li class='dog'><%= el %></li>
+        <%})%>
+    </ul>
+
+<%- include('partials/footer.ejs') %>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
