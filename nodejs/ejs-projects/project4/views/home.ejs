@@ -1,5 +1,21 @@
-<h1>Home Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+    <h1>Home Page</h1>
 
-<% data.people.forEach(el=>{ %>
-    <%- include("partials/card.ejs", {cardData: el}) %>
-<%})%>
+<div class ="card_container">
+    <% data.people.forEach(el=>{ %>
+        <%- include("partials/card.ejs", {cardData: el}) %>
+    <%})%>
+</div>
+
+
+</body>
+</html>
