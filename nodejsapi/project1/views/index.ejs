@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitCoin Price</title>
+</head>
+<body>
+    
+    <form action="/getRates">
+        <h1>BitCoin Price App</h1>
+        <label for="usd">USD</label>
+        <input type="radio" id="usd" name="currency" value="USD" checked>
+        <label for="usd">GBP</label>
+        <input type="radio" id="gbp" name="currency" value="GBP">
+        <label for="usd">EUR</label>
+        <input type="radio" id="eur" name="currency" value="EUR"> <br>
+
+        <input type="submit" id="btn" value="Get Price"> <br>
+
+        <h1><b>This is the current price:</b></h1>
+        <p><%- symbol %> <%= price %></p>
+        
+
+    <a href="https://www.coindesk.com/price/bitcoin">Powered By CoinDesk</a>
+    </form>
+
+</body>
+</html>
