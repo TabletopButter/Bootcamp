@@ -21,15 +21,11 @@ app.get('/results', (req, res)=>{
     .then(data => { 
         // arrT=[]
         // arrP=[]
-
         // data.results.forEach(el => arrT.push(el.title))
         // data.results.forEach(el => arrP.push(el.poster_path))
-
-    //    console.log(arrT)
-    //    console.log(arrP)
-
-    //    res.render("results.ejs", {movies: arrT, arrP})
-
+        //console.log(arrT)
+        //console.log(arrP)
+        //res.render("results.ejs", {movies: arrT, arrP})
         res.render("results.ejs", {movies: data.results})
     })
     .catch()
