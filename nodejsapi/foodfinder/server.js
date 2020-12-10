@@ -6,6 +6,8 @@ const client = yelp.client('OgYJmJGv7bSns-46rpofRcTpJMw6z9RG4lE3vNzFDRViPcGa8Ve2
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static("public"));
+
 
 app.get("/", (req, res)=>{
     res.render("index.ejs")
@@ -16,6 +18,7 @@ app.get("/results", (req, res)=>{
     
     client.search({
         location: city,
+        limit:10
       }).then(response => {
         // console.log(response.jsonBody.businesses);
         res.render("results.ejs", {data: response.jsonBody.businesses})

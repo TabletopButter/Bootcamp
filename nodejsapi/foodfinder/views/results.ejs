@@ -1,7 +1,13 @@
 <%# console.log(data) %>
 
 <% data.forEach(el => { %>
- 
-<p><%= el.name %></p>
-<img src=""
+<p><a href="<% =el.url %> "><%= el.name %>
+<% if(el.rating%1 ==0) { %>
+<img src="assets/stars/large_<%=Math.floor(el.rating)%>.png">
+
+<% }else {%>
+<img src="assets/stars/large_<%=Math.floor(el.rating)%>_half.png">
+<%}%>
+
 <% }) %>
+</a></p>
