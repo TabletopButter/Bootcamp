@@ -1,90 +1,23 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
 
-const logger = require('morgan');
-app.use(logger('dev'));
+const logger = require('morgan')
+app.use(logger('dev'))
 
-const PORT = process.env.PORT || 3000;
+const cors=require("cors")
+app.use(cors())
 
-app.get('/', (req, res)=>{
-    res.send("I am the root route!");
-})
+const bodyParser = require('body-parser')
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
 
+app.use(express.static('../client'))
 
-// todos
-// todos/:id
+const PORT = process.env.PORT || 3000
 
-
-// CRUD
-// C-Create -> Use the POST method
-// R - Read -> Use the GET method
-// U - Update -> Use the PUT method
-// D - Delete - > Use the DELETE method
-
-app.get('/todos', (req, res)=>{
-    res.json(todoArray)
-})
-
-app.post('/todos', (req, res)=>{
-
-    let newTodo = {
-        id: 4,
-        description: "Buy more stuff",
-        isComplete: false
-    }
-    todoArray.push(newTodo);
-
-    res.status(201).json(newTodo);
-
-})
-
-app.delete('/todos/:id', (req, res)=>{
-    let requestedTodoId = parseInt(req.params.id)
-    let requestedTodoIndex = todoArray.findIndex(function(todo){
-        return todo.id === requestedTodoId
-    })
-
-    if(requestedTodoIndex >= 0){
-        todoArray.splice(requestedTodoIndex, 1)
-        res.send(todoArray)
-    } else {
-        res.send("ID does not exist")
-    }
-
-    
-
-})
-
-app.put('/todos/:id', (req, res)=>{
-    let updatedTodoId = parseInt(req.params.id)
-    let found = todoArray.find(function(todo){
-        return todo.id === updatedTodoId
-    })
-
-    if(found){
-        let updatedTodo ={
-            id: found.id,
-            description: found.description,
-            isComplete: !(found.isComplete)
-        }
-    
-        let targetIndex = todoArray.indexOf(found)
-
-        todoArray.splice(targetIndex, 1, updatedTodo)
-        res.sendStatus(204);
-    } else {
-        res.sendStatus(404);
-    }
-
-})
-
-
-
-
-
-app.listen(PORT, ()=> console.log(`App is running on port ${PORT}.`));
-
-let todoArray = [
+let toDoArray = [
     {
         id: 1,
         description: 'Call Mom',
@@ -101,3 +34,60 @@ let todoArray = [
         isComplete: false
     }
 ]
+
+app.get('/', (req, res)=>{
+    res.send('I am the root route')
+})
+
+// CRUD
+
+// R - Read  - GET method
+app.get('/todos', (req, res)=>{
+    res.json(toDoArray)
+})
+
+let num = 4
+// C - Create - POST method
+app.post('/todos', (req, res)=>{
+    let newTodo =
+        {
+            id: num++,
+            description: req.body.description,
+            isComplete: false
+        }
+    toDoArray.push(newTodo)
+    res.status(222).json(newTodo)
+})
+
+// D - Delete - DELETE method 
+app.delete('/todos/:id', (req, res)=>{
+    let requestedTodoId = parseInt(req.params.id)
+    let requestedTodoIndex = toDoArray.findIndex(function(todo){
+        return todo.id === requestedTodoId
+    })
+
+    if(requestedTodoIndex >= 0){
+        let deletedTodo = toDoArray.splice(requestedTodoIndex, 1)
+        res.status(223).send(deletedTodo)
+    } else {
+        res.status(666).send('ID does not exist for deleting on backend')
+    }  
+})
+
+
+// U - Update - PUT method - /todos/:id
+app.put('/todos/:id', (req, res)=>{
+    let requestedTodoId = parseInt(req.params.id)
+    let requestedTodo = toDoArray.find(function(todo){
+        return todo.id === requestedTodoId
+    })
+
+    if(requestedTodo !== undefined){
+        requestedTodo.isComplete = !requestedTodo.isComplete
+        res.status(224).send(requestedTodo)
+    } else {
+        res.status(667).send('ID does not exist for PUT backend')
+    }
+})
+
+app.listen(PORT, ()=> console.log(`App listening on port ${PORT}.`))
