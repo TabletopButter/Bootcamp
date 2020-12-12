@@ -55,6 +55,32 @@ app.delete('/todos/:id', (req, res)=>{
 
 })
 
+app.put('/todos/:id', (req, res)=>{
+    let updatedTodoId = parseInt(req.params.id)
+    let found = todoArray.find(function(todo){
+        return todo.id === updatedTodoId
+    })
+
+    if(found){
+        let updatedTodo ={
+            id: found.id,
+            description: found.description,
+            isComplete: !(found.isComplete)
+        }
+    
+        let targetIndex = todoArray.indexOf(found)
+
+        todoArray.splice(targetIndex, 1, updatedTodo)
+        res.sendStatus(204);
+    } else {
+        res.sendStatus(404);
+    }
+
+})
+
+
+
+
 
 app.listen(PORT, ()=> console.log(`App is running on port ${PORT}.`));
 
