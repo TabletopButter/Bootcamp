@@ -55,7 +55,19 @@ $("input").keypress(function(event) {
 
 // Update
 $("ul").on("click", "li", function() {
-  $(this).toggleClass("completed");
+  let self = this
+  let thisTodoId = $(this).data('id')
+
+  $.ajax({
+    url: `${todoUrl}/${thisTodoId}`,
+    method:'PUT'
+  })
+  .done(function(){
+    $(self).toggleClass('completed');
+  })
+  .fail(function(error){
+    console.error(`Issue with trying to update class: ${error}`)
+  })
 });
 
 // Delete

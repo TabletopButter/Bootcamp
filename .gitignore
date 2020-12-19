@@ -113,3 +113,6 @@ dist
 /bootstrap/codealong/
 /javascript/codealong/
 /jQuery/codealong/
+
+#config for local authentication
+config.js
