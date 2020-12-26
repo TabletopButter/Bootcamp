@@ -19,3 +19,5 @@ What would be the value of the following:
 - myvar[2]
 get an error or undefined
 
+### Feedback:
+Your answers are correct.

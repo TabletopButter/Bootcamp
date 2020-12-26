@@ -7,3 +7,6 @@
 
 Answer
 Tells the client what to expect in the response from another machine, e.g. a restful API.
+
+### Feedback:
+Correct

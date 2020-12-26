@@ -8,3 +8,9 @@
 
 Answer
 All of the above
+
+### Feedback:
+No, I am not aware of request module serving a website. Hence it cannot 
+act as a proxy without adding other functionality, like the HTTP module.
+
+Score: 0

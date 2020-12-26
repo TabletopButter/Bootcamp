@@ -18,3 +18,9 @@ for (int i =0; i<Array.length; i++){
 missnum = 5050-sum, and then you could even find the index with the included solution
 
 5050 is the sum of all integers between 1 and 100
+
+### Feedback:
+This is an acceptable solution, however you might not be able to extend it
+if there were n items missing where n is > 1.
+
+Score: full
