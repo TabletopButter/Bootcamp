@@ -53,7 +53,7 @@ FROM accsoftwarebootcamp.employees e
 LEFT JOIN accsoftwarebootcamp.employees mgr ON e.manager_id = mgr.employee_id
 JOIN accsoftwarebootcamp.departments d ON e.department_id = d.department_id
 JOIN accsoftwarebootcamp.locations l ON d.location_id = l.location_id
-WHERE l.city='Seattle';
+WHERE l.city='Seattle' AND d.department_name='Executive';
 
 --Task 7
 SELECT EXTRACT(YEAR FROM hire_date) AS "Hire Date", COUNT(hire_date)
