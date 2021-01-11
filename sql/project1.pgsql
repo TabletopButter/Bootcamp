@@ -56,6 +56,9 @@ JOIN accsoftwarebootcamp.locations l ON d.location_id = l.location_id
 WHERE l.city='Seattle';
 
 --Task 7
+SELECT EXTRACT(YEAR FROM hire_date) AS "Hire Date", COUNT(hire_date)
+FROM accsoftwarebootcamp.employees
+GROUP BY EXTRACT(YEAR FROM hire_date)
 
 
 
