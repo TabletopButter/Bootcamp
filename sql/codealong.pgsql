@@ -113,3 +113,5 @@ t.name
 FROM hr.players p LEFT JOIN hr.teams t
 ON p.team_id = t.id;
 
+
+
