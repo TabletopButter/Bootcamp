@@ -112,8 +112,8 @@ app.delete("/todos/:id", (req, res) => {
   let todoId = parseInt(req.params.id);
   let query = `
     DELETE FROM todos.todos
-    WHERE id = ${todoId}
-  `
+    WHERE id = ${todoId}`
+
   client.query(query, function(err, todos){
     if(err) {
       console.log('Error: ',err.stack)
@@ -126,22 +126,20 @@ app.delete("/todos/:id", (req, res) => {
 
 // Update
 app.put("/todos/:id", (req, res) => {
-  let requestedToDoId = req.params.id;
-  TodoModel.findById(requestedToDoId, function(error, result){
-    if(error){
-      res.status(666).send('Id does not exist for updating')
-    } else {
-      result.isComplete = !result.isComplete
-      result.save(function(err, updatedTodo){
-        if(err){
-          res.status(667).send('Cannot update document')
-        } else {
-          res.status(202).send(updatedTodo)
-        }
-      })
-      
-    }
-  })
+    let todoId = parseInt(req.params.id);
+    let query = `
+    UPDATE todos.todos SET
+    iscomplete = NOT iscomplete
+    WHERE id =${todoId}`
+
+    client.query(query, function(err, todos){
+      if(err) {
+        console.log('Error: ',err.stack)
+        res.status(404).json({code:1255, message: `Error while updating todo: ${todoId}`})
+      } else {
+        res.json(todos.rows)
+      }
+    })
 })
 
 app.listen(port, () => {

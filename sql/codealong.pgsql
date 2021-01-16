@@ -114,4 +114,20 @@ FROM hr.players p LEFT JOIN hr.teams t
 ON p.team_id = t.id;
 
 
+-- Add users/update users in the sql user table
 
+select * from todos.users;
+
+INSERT INTO todos.users (username)
+VALUES ('Adam')
+
+UPDATE todos.users SET
+username = 'Adam C'
+WHERE id = 27;
+
+CREATE TABLE todos.service 
+(s_id        NUMERIC(8) PRIMARY KEY,
+s_start DATE DEFAULT CURRENT_DATE,
+s_end DATE);
+
+INSERT INTO todos.service(s_id)
