@@ -61,11 +61,10 @@ app.get("/", function(req, res) {
 
 // Read data
 app.get("/todos", function(req, res) {
-  let query =`SELECT id as _id,
-                    id as id,
+  let query =`SELECT id as "_id",
                    description,
-                   isComplete
-               FROM todos.todos;`
+                   iscomplete as "isComplete"
+               FROM todos.todos`
 
    client.query(query, function(err, todos) {
        if(err) {
@@ -130,7 +129,7 @@ app.put("/todos/:id", (req, res) => {
     let query = `
     UPDATE todos.todos SET
     iscomplete = NOT iscomplete
-    WHERE id =${todoId}`
+    WHERE id = ${todoId}`
 
     client.query(query, function(err, todos){
       if(err) {
