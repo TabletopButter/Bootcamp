@@ -20,3 +20,5 @@
 
 // var doubleAndFilter = arr => arr.map(value => value *2).filter(value => value%3===0)
 
+// Other than 6 primatives everything else is an object
+
