@@ -13,14 +13,19 @@ class Box extends Component {
         return bC;
     }
     
+    rSize = () => {
+        let size = [74, 28, 36, 85][Math.floor(Math.random() * 4)];
+        return size;
+    }
+
     render() {       
         
         const {boxNum} = this.props;
-        let bgStyle = {backgroundColor:this.bgColor(), borderColor:this.borderColor()}
+        let bgStyle = {backgroundColor:this.bgColor(), borderColor:this.borderColor(),width:this.rSize(), height:this.rSize()}
     
         return(
             
-            <div className='box' name='box1' style={bgStyle}>{boxNum}</div>
+            <div className='box' name='box1' style={bgStyle}><span>{boxNum}</span></div>
         
         )
     }
