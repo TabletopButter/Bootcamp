@@ -5,7 +5,7 @@ import "../../App.css";
 class TodoHeader extends React.Component {
     render () {
         return (
-            <h3>TodoHeader</h3>
+            <h3></h3>
         )
     }
 }

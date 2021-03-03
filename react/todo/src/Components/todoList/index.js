@@ -9,9 +9,17 @@ class TodoList extends React.Component {
                     t => {
                         let isCompleteStyle=t.isComplete ? {textDecoration:'line-through', color:'gray'} : {}
                         return (
-                            <li key={t.id} style={isCompleteStyle}>
+                            
+                         <div key={t.id}> 
+                            <li 
+                                key={t.id} 
+                                style={isCompleteStyle}
+                                className="todos"
+                                onClick={ () => {this.props.toggleComplete(t.id)}}
+                                >
                                 {t.text}
-                            </li>
+                            </li> <button>Delete</button>
+                        </div>  
                         )
                 }
             )

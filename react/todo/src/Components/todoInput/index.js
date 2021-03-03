@@ -8,9 +8,9 @@ class TodoInput extends React.Component {
         //prevents the default behavior of the form, which would refresh the page
         event.preventDefault()
 
-        if(!this.todoInput) return; //if nothing in input, bail out
-        this.props.addItem(this.todoInput.value) // call the addItem from TodoApp component which was recieved as a prop
-        this.todoInput.value = ""; //empty out the input
+        // if(!this.todoInput.value) return; //if nothing in input, bail out, want the value so we dont get 0 length strings added
+        this.props.addItem() // call the addItem from TodoApp component which was recieved as a prop
+        // this.todoInput.value = ""; //empty out the input
     }
     
     render () {
@@ -22,7 +22,9 @@ class TodoInput extends React.Component {
                     placeholder="enter your task here"
                     name="todoInput"
                     //lets setup ref with a function, for flexibility(later use)
-                    ref={r=> {this.todoInput = r}} 
+                    // ref={r=> {this.todoInput = r}} 
+                    onChange={this.props.handleChange}
+                    value={this.props.newTodo}
                 />
               </form>
           </div>
