@@ -82,8 +82,19 @@ class TodoApp extends React.Component {
             
             return prevState;
         })
+    }
 
+    handleDelete = id => {
+        
+        this.setState(function(prevState) {
+            let filteredList = prevState.todos.filter(
+                t => t.id !== id
+            )
 
+            prevState.todos = filteredList;
+
+            return prevState;
+        })
 
     }
     
@@ -99,6 +110,7 @@ class TodoApp extends React.Component {
                 <TodoList 
                     todos={this.state.todos}
                     toggleComplete={this.toggleComplete}
+                    handleDelete={this.handleDelete}
                 />
             </>
         )

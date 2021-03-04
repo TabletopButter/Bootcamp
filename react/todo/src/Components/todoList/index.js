@@ -1,6 +1,8 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import "../../App.css";
+import {BsTrash2Fill} from 'react-icons/bs'
+
 
 class TodoList extends React.Component {
     render () {
@@ -18,7 +20,9 @@ class TodoList extends React.Component {
                                 onClick={ () => {this.props.toggleComplete(t.id)}}
                                 >
                                 {t.text}
-                            </li> <button>Delete</button>
+                            </li> <BsTrash2Fill style = {{color:'red', cursor:'pointer'}}
+                                onClick={ () => {this.props.handleDelete(t.id)}}
+                            />
                         </div>  
                         )
                 }
