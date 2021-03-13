@@ -1,0 +1,40 @@
+.flex-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.pic-container{
+    display:block;
+    margin: 10px;
+    padding:10px;
+    flex-basis: 100%;
+
+}
+
+img {
+    max-width: 100%;
+    margin: 0;
+}
+
+@media only screen and (min-width: 640px) {
+    .pic-container {
+        flex-basis: 50%
+    }
+}
+@media only screen and (min-width: 960px) {
+    .pic-container {
+        flex-basis: 33.333%
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .pic-container {
+        flex-basis: 25%
+    }
+}
+
+
+/* My mistake on this one was not realizing that when i was trying to set the width, i was inadvertantly setting the width of the entire block element in this case the div container. With that in mind we can just use a flebox, have it wrap and justify the content in the center. After that we can set the margin for each picture to give it space in between the pictures */ 
+/* Also I did not adjust the flex-basis propery depending on the media size */

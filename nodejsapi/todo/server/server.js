@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 
 const logger = require('morgan')
-app.use(logger('dev'))
+// app.use(logger('process.env.NODE_ENV'))
+
+const debug = require('debug') ('server')
 
 const cors=require("cors")
 app.use(cors())
@@ -56,7 +58,7 @@ app.post('/todos', (req, res)=>{
             isComplete: false
         }
     toDoArray.push(newTodo)
-    res.status(222).json(newTodo)
+    res.status(201).json(newTodo)
 })
 
 // D - Delete - DELETE method 
@@ -84,10 +86,12 @@ app.put('/todos/:id', (req, res)=>{
 
     if(requestedTodo !== undefined){
         requestedTodo.isComplete = !requestedTodo.isComplete
-        res.status(224).send(requestedTodo)
+        res.status(202).send(requestedTodo)
     } else {
         res.status(667).send('ID does not exist for PUT backend')
     }
 })
 
-app.listen(PORT, ()=> console.log(`App listening on port ${PORT}.`))
+// app.listen(PORT, ()=> console.log(`App listening on port ${PORT}.`))
+
+module.exports = app;
