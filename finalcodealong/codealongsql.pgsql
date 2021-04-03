@@ -6,3 +6,6 @@ SELECT first_name || ' ' || last_name as "EMPLOYEE NAME", d.department_name as "
 FROM acc.hr.employees as e LEFT JOIN acc.hr.departments as d
 ON e.department_id = d.department_id;
 
+
+
+

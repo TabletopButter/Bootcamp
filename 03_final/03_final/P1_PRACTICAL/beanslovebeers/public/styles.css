@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  h1 {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .card img {
+    max-height: 400px;
+    min-height: 150px;
+    object-fit: cover;
+}
+
+.card {
+  display:inline-block;
+  min-height: 400px;
+}
