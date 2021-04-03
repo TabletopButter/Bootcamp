@@ -1,0 +1,10 @@
+// in mongodb, use a databe tha thas your first name
+// q1 within it add the following data to the friends collection
+
+name: Jon, type: 'work'
+name: Jill, type: 'school'
+name: Steve, type: ['beer','work']
+name: Sabrina, type: 'family'
+
+// q2 now run a query that finds all your work buddies
+

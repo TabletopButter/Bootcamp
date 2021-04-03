@@ -25,27 +25,49 @@ class TodoApp extends React.Component {
             newTodo:""
 
         }
+
     }
     
+
+    url = 'https://todoswheroku.herokuapp.com/todos'
+
+    componentDidMount = () => {
+        console.log('cdm fired')
+        fetch(this.url)
+        .then(data => data.json())
+        .then(data => {
+            this.setState(prevState => ({todos:data}))
+        })
+        .catch(err => err)
+    }
+
+
     addItem = () => {
         
         // this.setState(function(prevState,prevProps) {     //overloading w/ functional setState
         //     return prevState;
         // })
         
-        
-        this.setState({
-            ...this.state,
-            todos: [...this.state.todos, {
-                id: Date.now(),
-                text: this.state.newTodo,
-                isComplete:false
-            }],
-            newTodo:""
-        }
-        ,
-        function() {
-            console.log('State after addItem: ',this.state)
+        fetch(this.url, {
+            method:'POST',
+            body: this.state.newTodo,
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data  => {
+            this.setState({
+                ...this.state,
+                todos: [...this.state.todos, data],
+                newTodo:""
+            }
+            ,
+            function() {
+                console.log('State after addItem: ',this.state)
+            })
         })
 
         //console.log('State after addItem: ',this.state)

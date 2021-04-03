@@ -19,7 +19,7 @@ class TodoList extends React.Component {
                                 className="todos"
                                 onClick={ () => {this.props.toggleComplete(t.id)}}
                                 >
-                                {t.text}
+                                {t.description}
                             </li> <BsTrash2Fill style = {{color:'red', cursor:'pointer'}}
                                 onClick={ () => {this.props.handleDelete(t.id)}}
                             />
