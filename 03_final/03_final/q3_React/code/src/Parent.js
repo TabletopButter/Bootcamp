@@ -1,6 +1,10 @@
 import React from 'react'
 import Child from './Child'
 
+
+// I completly forgot to add the .env file that made react live update possible and spent way to much time wondering why my code wasnt working
+
+
 class Parent extends React.Component {
 
   constructor(props){

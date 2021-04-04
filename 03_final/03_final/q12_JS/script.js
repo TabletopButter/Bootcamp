@@ -17,4 +17,4 @@ function isIsogram(str){
 
 var test = "Hello"
 
-console.log(`${test}:`+isIsogram(`${test}`))
+console.log(`${test}:`+" "+ isIsogram(test))

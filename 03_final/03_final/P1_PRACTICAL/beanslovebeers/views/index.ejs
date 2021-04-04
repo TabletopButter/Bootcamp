@@ -2,9 +2,6 @@
 <%- include('partials/navbar.ejs') %>
 <%- include('partials/searchbar.ejs') %>
 
-
-<div class = "card_container">
     <% beer.forEach(el => { %>
         <%- include("partials/card.ejs", {cardData: el}) %>
-        <% }) %>
-</div>
+    <% }) %>

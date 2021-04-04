@@ -8,4 +8,5 @@ The big differences between relational (aka SQL databases) and document based da
 4. The schema flexibility of document databases make them suitable for quick experimentation.
 
 ### Answer:
-2
+
+SKIP
